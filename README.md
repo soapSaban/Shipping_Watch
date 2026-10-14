@@ -2,7 +2,8 @@
 
 > **24-Hour AI Challenge Submission**  
 > **Role:** Software Engineering Intern (AI) — Case Study Round  
-> **Local Web Dashboard:** [http://localhost:5000](http://localhost:5000) *(Live Render link will be added upon deployment)*  
+> **Live Cloud Dashboard:** [https://shipping-watch.onrender.com](https://shipping-watch.onrender.com)  
+> **Local Web Dashboard:** [http://localhost:5000](http://localhost:5000)  
 > **One-Line Command to Run:** `docker compose up --build` *(or `python start.py` locally)*
 
 ---
@@ -218,4 +219,4 @@ Shipping_Watch/
 4. **Zero-Cost Strategy & Model Cascade (2 min)**:
    * Present the token log: only 20 calls across 2 full years of data, costing $0.00 on the free tier with `gemini-3.5-flash-lite`.
 5. **Live Demo & Interactive Q&A (2 min)**:
-   * Open **`http://localhost:5000`**, demonstrate the table filtering, and ask an ad-hoc question in the QA assistant box (e.g. *"Why did Ahmedabad-Mumbai spike in Jan 2025?"*) to showcase the live framing spinner and grounded response.
+   * Open **`https://shipping-watch.onrender.com`** (or `http://localhost:5000`), demonstrate the table filtering, and ask an ad-hoc question in the QA assistant box (e.g. *"Why did Ahmedabad-Mumbai spike in Jan 2025?"*) to showcase the live framing spinner and grounded response.
