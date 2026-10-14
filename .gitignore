@@ -38,5 +38,3 @@ scratch/
 run1.csv
 run2.csv
 run3.csv
-*.log
-logs/

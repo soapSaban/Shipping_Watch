@@ -1,0 +1,467 @@
+[2026-10-14 19:34:25.913] [INFO   ] [HOST] [SYSTEM] Unified logger initialized successfully.
+[2026-10-14 19:34:25.915] [INFO   ] [HOST] [DIAGNOSTIC] System monitor test log entry: SUCCESS
+==========================================================
+ FREIGHTTIGER SHIPPING WATCH ASSISTANT (CONTAINERIZED)
+==========================================================
+[2026-10-14 14:07:26] [INFO   ] [CONTAINER] [SYSTEM] Container booted. Starting pipeline...
+
+[Step 1/4] Running Core Analytics & Hybrid RAG Pipeline...
+======================================================================
+ FREIGHTTIGER SHIPPING WATCH: BATCH ANALYTICS & RAG PIPELINE
+======================================================================
+
+[1/5] Loading records from: shipment_records.csv
+      Calculated metrics across 7 routes and 104 weeks (728 route-week records).
+
+[2/5] Running Anomaly Detection Layer...
+      Identified 20 anomalous cost spikes (708 within normal bounds).
+
+[3/5] Initializing Hybrid RAG Retriever from: context_notes.csv
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]Loading weights: 100%|██████████| 103/103 [00:00<00:00, 4172.71it/s]
+      Indexed 10 context notes.
+
+[4/5] Evaluating Spikes with Guardrail Reasoner (Temp=0)...
+
+[5/5] Exporting Output to: output/sample_output_format.csv
+      Successfully saved 20 records to output/sample_output_format.csv
+      Saved token & cost telemetry to output/token_cost_log.json
+
+======================================================================
+ EXECUTION & COST TELEMETRY SUMMARY
+======================================================================
+ Model Used:         gemini-3.5-flash-lite
+ Pricing Tier:       Google AI Studio Free Tier (15 RPM / 250K TPM / 500 RPD)
+ Total LLM Calls:    20
+ Total Tokens:       8,203 (6,718 in, 1,485 out)
+ Nominal USD Cost:   $0.000949
+ Actual Billed Cost: $0.00 (Zero-Cost Free Tier)
+ Total Runtime:      86.97 seconds
+======================================================================
+
+
+[Step 2/4] Validating Ground Truth & Guardrails...
+======================================================================
+ EVALUATION HARNESS: GROUND TRUTH & GUARDRAIL INTEGRITY
+======================================================================
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]Loading weights: 100%|██████████| 103/103 [00:00<00:00, 3642.02it/s]
+
+[Test 1] Validating Mathematical Fidelity against sample_output_format_v2.csv:
+ [PASS] Delhi-Jaipur (2024-11-11): Cost=4.17, Hist=+35.5% vs this route's past average, Peer=+21.0% vs similar-length routes this week
+ [PASS] Ahmedabad-Mumbai (2025-01-20): Cost=3.29, Hist=+29.5% vs this route's past average, Peer=+22.5% vs similar-length routes this week
+ [PASS] Mumbai-Pune (2025-09-15): Cost=3.98, Hist=+9.2% vs this route's past average, Peer=+23.6% vs similar-length routes this week
+
+[Test 2] Validating Guardrails (Non-Justifying Notes & Corridor Isolation):
+ [PASS] N005 Guardrail: Maintenance without cost change was correctly rejected as justification.
+ [PASS] Corridor Isolation: Chennai-Bangalore flood correctly excluded from Delhi-Jaipur candidates.
+
+======================================================================
+ [SUMMARY] ALL EVALUATION TESTS PASSED (100% Reliability)
+======================================================================
+
+
+[Step 3/4] Verifying 3-Run Reproducibility...
+======================================================================
+ REPRODUCIBILITY VERIFICATION: 3 UNTOUCHED RUNS
+======================================================================
+
+---> Executing Run #1 into output/run1.csv...
+======================================================================
+ FREIGHTTIGER SHIPPING WATCH: BATCH ANALYTICS & RAG PIPELINE
+======================================================================
+
+[1/5] Loading records from: shipment_records.csv
+      Calculated metrics across 7 routes and 104 weeks (728 route-week records).
+
+[2/5] Running Anomaly Detection Layer...
+      Identified 20 anomalous cost spikes (708 within normal bounds).
+
+[3/5] Initializing Hybrid RAG Retriever from: context_notes.csv
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]Loading weights: 100%|██████████| 103/103 [00:00<00:00, 4284.06it/s]
+      Indexed 10 context notes.
+
+[4/5] Evaluating Spikes with Guardrail Reasoner (Temp=0)...
+
+[5/5] Exporting Output to: output/run1.csv
+      Successfully saved 20 records to output/run1.csv
+      Saved token & cost telemetry to output/token_cost_run1.json
+
+======================================================================
+ EXECUTION & COST TELEMETRY SUMMARY
+======================================================================
+ Model Used:         gemini-3.5-flash-lite
+ Pricing Tier:       Google AI Studio Free Tier (15 RPM / 250K TPM / 500 RPD)
+ Total LLM Calls:    20
+ Total Tokens:       6,430 (5,278 in, 1,152 out)
+ Nominal USD Cost:   $0.000741
+ Actual Billed Cost: $0.00 (Zero-Cost Free Tier)
+ Total Runtime:      37.6 seconds
+======================================================================
+
+     Run #1 MD5 Hash: 50e16446577ed43f23ee0b20cd32512a
+
+---> Executing Run #2 into output/run2.csv...
+======================================================================
+ FREIGHTTIGER SHIPPING WATCH: BATCH ANALYTICS & RAG PIPELINE
+======================================================================
+
+[1/5] Loading records from: shipment_records.csv
+      Calculated metrics across 7 routes and 104 weeks (728 route-week records).
+
+[2/5] Running Anomaly Detection Layer...
+      Identified 20 anomalous cost spikes (708 within normal bounds).
+
+[3/5] Initializing Hybrid RAG Retriever from: context_notes.csv
+Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]Loading weights: 100%|██████████| 103/103 [00:00<00:00, 3697.51it/s]
+      Indexed 10 context notes.
+
+[4/5] Evaluating Spikes with Guardrail Reasoner (Temp=0)...
+
+[5/5] Exporting Output to: output/run2.csv
+      Successfully saved 20 records to output/run2.csv
+      Saved token & cost telemetry to output/token_cost_run2.json
+
+======================================================================
+ EXECUTION & COST TELEMETRY SUMMARY
+======================================================================
+ Model Used:         gemini-3.5-flash-lite
+ Pricing Tier:       Google AI Studio Free Tier (15 RPM / 250K TPM / 500 RPD)
+ Total LLM Calls:    20
+ Total Tokens:       7,493 (6,142 in, 1,351 out)
+ Nominal USD Cost:   $0.000866
+ Actual Billed Cost: $0.00 (Zero-Cost Free Tier)
+ Total Runtime:      33.23 seconds
+======================================================================
+
+     Run #2 MD5 Hash: 769b65ca17c654ded79e5eec18f397af
+
+---> Executing Run #3 into output/run3.csv...
+======================================================================
+ FREIGHTTIGER SHIPPING WATCH: BATCH ANALYTICS & RAG PIPELINE
+======================================================================
+
+[1/5] Loading records from: shipment_records.csv
+      Calculated metrics across 7 routes and 104 weeks (728 route-week records).
+
+[2/5] Running Anomaly Detection Layer...
+      Identified 20 anomalous cost spikes (708 within normal bounds).
+
+[3/5] Initializing Hybrid RAG Retriever from: context_notes.csv
+Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]Loading weights: 100%|██████████| 103/103 [00:00<00:00, 3780.04it/s]
+      Indexed 10 context notes.
+
+[4/5] Evaluating Spikes with Guardrail Reasoner (Temp=0)...
+
+[5/5] Exporting Output to: output/run3.csv
+      Successfully saved 20 records to output/run3.csv
+      Saved token & cost telemetry to output/token_cost_run3.json
+
+======================================================================
+ EXECUTION & COST TELEMETRY SUMMARY
+======================================================================
+ Model Used:         gemini-3.5-flash-lite
+ Pricing Tier:       Google AI Studio Free Tier (15 RPM / 250K TPM / 500 RPD)
+ Total LLM Calls:    20
+ Total Tokens:       5,563 (4,464 in, 1,099 out)
+ Nominal USD Cost:   $0.000664
+ Actual Billed Cost: $0.00 (Zero-Cost Free Tier)
+ Total Runtime:      35.82 seconds
+======================================================================
+
+     Run #3 MD5 Hash: 5bc76a92af09e7127270f960d63fd8f0
+
+======================================================================
+ [ERROR] OUTPUTS DIFFERED ACROSS RUNS
+ Run 1: 50e16446577ed43f23ee0b20cd32512a
+ Run 2: 769b65ca17c654ded79e5eec18f397af
+ Run 3: 5bc76a92af09e7127270f960d63fd8f0
+ Saved verification report to: output/reproducibility_report.md
+======================================================================
+
+
+[Step 4/4] Starting Flask Dashboard & Interactive Assistant...
+--> Web Dashboard live on http://0.0.0.0:5000
+[2026-10-14 14:11:00 +0000] [303] [INFO] Starting gunicorn 26.2.0
+[2026-10-14 14:11:00 +0000] [303] [INFO] Listening at: http://0.0.0.0:5000 (303)
+[2026-10-14 14:11:00 +0000] [303] [INFO] Using worker: gthread
+[2026-10-14 14:11:00 +0000] [305] [INFO] Booting worker with pid: 305
+[2026-10-14 14:11:00 +0000] [306] [INFO] Booting worker with pid: 306
+[2026-10-14 14:11:00 +0000] [303] [INFO] Control socket listening at /root/.gunicorn/gunicorn.ctl
+172.18.0.1 - - [14/Oct/2026:14:11:03 +0000] "GET /api/health HTTP/1.1" 200 63 "-" "Python-urllib/3.10"
+172.18.0.1 - - [14/Oct/2026:14:11:05 +0000] "GET /api/health HTTP/1.1" 200 63 "-" "Python-urllib/3.10"
+172.18.0.1 - - [14/Oct/2026:14:11:37 +0000] "GET /api/data HTTP/1.1" 200 10800 "-" "Python-urllib/3.10"
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]Loading weights: 100%|██████████| 103/103 [00:00<00:00, 3944.97it/s]
+172.18.0.1 - - [14/Oct/2026:14:11:55 +0000] "POST /api/chat HTTP/1.1" 200 370 "-" "Python-urllib/3.10"
+172.18.0.1 - - [14/Oct/2026:14:12:19 +0000] "GET / HTTP/1.1" 200 8156 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36 Edg/155.0.0.0"
+172.18.0.1 - - [14/Oct/2026:14:12:19 +0000] "GET /static/style.css HTTP/1.1" 200 0 "http://localhost:5000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36 Edg/155.0.0.0"
+172.18.0.1 - - [14/Oct/2026:14:12:19 +0000] "GET /static/app.js HTTP/1.1" 200 0 "http://localhost:5000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36 Edg/155.0.0.0"
+172.18.0.1 - - [14/Oct/2026:14:12:19 +0000] "GET /api/data HTTP/1.1" 200 10800 "http://localhost:5000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36 Edg/155.0.0.0"
+172.18.0.1 - - [14/Oct/2026:14:12:19 +0000] "GET /favicon.ico HTTP/1.1" 404 207 "http://localhost:5000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36 Edg/155.0.0.0"
+Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]Loading weights: 100%|██████████| 103/103 [00:00<00:00, 3917.49it/s]
+172.18.0.1 - - [14/Oct/2026:14:12:24 +0000] "GET /api/notes HTTP/1.1" 200 2855 "http://localhost:5000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36 Edg/155.0.0.0"
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]Loading weights: 100%|██████████| 103/103 [00:00<00:00, 3653.73it/s]
+172.18.0.1 - - [14/Oct/2026:14:14:20 +0000] "POST /api/chat HTTP/1.1" 200 545 "http://localhost:5000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36 Edg/155.0.0.0"
+[2026-10-14 19:46:40.414] [INFO   ] [HOST] [SYSTEM] Unified logger initialized successfully.
+[2026-10-14 19:46:40.423] [INFO   ] [HOST] [PIPELINE] Starting Batch Analytics & RAG Pipeline. Input: data/shipment_records.csv
+[2026-10-14 19:46:40.424] [INFO   ] [HOST] [PIPELINE] [1/5] Loading and aggregating shipments from data/shipment_records.csv
+[2026-10-14 19:46:40.468] [INFO   ] [HOST] [PIPELINE] Successfully saved 20 records to output/sample_output_format.csv
+[2026-10-14 19:46:40.470] [INFO   ] [HOST] [TELEMETRY] Saved token & cost telemetry to output/token_cost_log.json
+[2026-10-14 19:46:59.247] [INFO   ] [HOST] [SYSTEM] Unified logger initialized successfully.
+[2026-10-14 19:46:59.251] [INFO   ] [HOST] [PIPELINE] Starting Batch Analytics & RAG Pipeline. Input: shipment_records.csv
+[2026-10-14 19:46:59.252] [INFO   ] [HOST] [PIPELINE] [1/5] Loading and aggregating shipments from shipment_records.csv
+[2026-10-14 19:46:59.302] [INFO   ] [HOST] [PIPELINE] Successfully saved 20 records to output\run1.csv
+[2026-10-14 19:46:59.309] [INFO   ] [HOST] [TELEMETRY] Saved token & cost telemetry to output\token_cost_run1.json
+[2026-10-14 19:46:59.313] [INFO   ] [HOST] [PIPELINE] Starting Batch Analytics & RAG Pipeline. Input: shipment_records.csv
+[2026-10-14 19:46:59.313] [INFO   ] [HOST] [PIPELINE] [1/5] Loading and aggregating shipments from shipment_records.csv
+[2026-10-14 19:46:59.350] [INFO   ] [HOST] [PIPELINE] Successfully saved 20 records to output\run2.csv
+[2026-10-14 19:46:59.351] [INFO   ] [HOST] [TELEMETRY] Saved token & cost telemetry to output\token_cost_run2.json
+[2026-10-14 19:46:59.354] [INFO   ] [HOST] [PIPELINE] Starting Batch Analytics & RAG Pipeline. Input: shipment_records.csv
+[2026-10-14 19:46:59.354] [INFO   ] [HOST] [PIPELINE] [1/5] Loading and aggregating shipments from shipment_records.csv
+[2026-10-14 19:46:59.399] [INFO   ] [HOST] [PIPELINE] Successfully saved 20 records to output\run3.csv
+[2026-10-14 19:46:59.401] [INFO   ] [HOST] [TELEMETRY] Saved token & cost telemetry to output\token_cost_run3.json
+172.18.0.1 - - [14/Oct/2026:14:17:53 +0000] "GET /api/health HTTP/1.1" 200 63 "-" "Python-urllib/3.10"
+Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]Loading weights: 100%|██████████| 103/103 [00:00<00:00, 3668.19it/s]
+172.18.0.1 - - [14/Oct/2026:14:18:56 +0000] "GET /api/data HTTP/1.1" 200 10800 "-" "Python-urllib/3.10"
+172.18.0.1 - - [14/Oct/2026:14:18:59 +0000] "POST /api/chat HTTP/1.1" 200 735 "http://localhost:5000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36 Edg/155.0.0.0"
+======================================================================
+ FREIGHTTIGER SHIPPING WATCH: BATCH ANALYTICS & RAG PIPELINE
+======================================================================
+
+[1/5] Loading records from: data/shipment_records.csv
+      Calculated metrics across 7 routes and 104 weeks (728 route-week records).
+
+[2/5] Running Anomaly Detection Layer...
+      Identified 20 anomalous cost spikes (708 within normal bounds).
+
+[3/5] Initializing Hybrid RAG Retriever from: data/context_notes.csv
+Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]Loading weights: 100%|██████████| 103/103 [00:00<00:00, 3419.50it/s]
+      Indexed 10 context notes.
+
+[4/5] Evaluating Spikes with Guardrail Reasoner (Temp=0)...
+==========================================================
+ FREIGHTTIGER SHIPPING WATCH ASSISTANT (CONTAINERIZED)
+==========================================================
+[2026-10-14 14:19:44] [INFO   ] [CONTAINER] [SYSTEM] Container booted. Starting pipeline...
+
+[Step 1/4] Running Core Analytics & Hybrid RAG Pipeline...
+======================================================================
+ FREIGHTTIGER SHIPPING WATCH: BATCH ANALYTICS & RAG PIPELINE
+======================================================================
+
+[1/5] Loading records from: shipment_records.csv
+      Calculated metrics across 7 routes and 104 weeks (728 route-week records).
+
+[2/5] Running Anomaly Detection Layer...
+      Identified 20 anomalous cost spikes (708 within normal bounds).
+
+[3/5] Initializing Hybrid RAG Retriever from: context_notes.csv
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]Loading weights: 100%|██████████| 103/103 [00:00<00:00, 3502.42it/s]
+      Indexed 10 context notes.
+
+[4/5] Evaluating Spikes with Guardrail Reasoner (Temp=0)...
+
+[5/5] Exporting Output to: output/sample_output_format.csv
+      Successfully saved 20 records to output/sample_output_format.csv
+      Saved token & cost telemetry to output/token_cost_log.json
+
+======================================================================
+ EXECUTION & COST TELEMETRY SUMMARY
+======================================================================
+ Model Used:         gemini-3.5-flash-lite
+ Pricing Tier:       Google AI Studio Free Tier (15 RPM / 250K TPM / 500 RPD)
+ Total LLM Calls:    20
+ Total Tokens:       7,262 (6,044 in, 1,218 out)
+ Nominal USD Cost:   $0.000819
+ Actual Billed Cost: $0.00 (Zero-Cost Free Tier)
+ Total Runtime:      30.3 seconds
+======================================================================
+
+
+[Step 2/4] Validating Ground Truth & Guardrails...
+======================================================================
+ EVALUATION HARNESS: GROUND TRUTH & GUARDRAIL INTEGRITY
+======================================================================
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]Loading weights: 100%|██████████| 103/103 [00:00<00:00, 3490.34it/s]
+
+[Test 1] Validating Mathematical Fidelity against sample_output_format_v2.csv:
+ [PASS] Delhi-Jaipur (2024-11-11): Cost=4.17, Hist=+35.5% vs this route's past average, Peer=+21.0% vs similar-length routes this week
+ [PASS] Ahmedabad-Mumbai (2025-01-20): Cost=3.29, Hist=+29.5% vs this route's past average, Peer=+22.5% vs similar-length routes this week
+ [PASS] Mumbai-Pune (2025-09-15): Cost=3.98, Hist=+9.2% vs this route's past average, Peer=+23.6% vs similar-length routes this week
+
+[Test 2] Validating Guardrails (Non-Justifying Notes & Corridor Isolation):
+ [PASS] N005 Guardrail: Maintenance without cost change was correctly rejected as justification.
+ [PASS] Corridor Isolation: Chennai-Bangalore flood correctly excluded from Delhi-Jaipur candidates.
+
+======================================================================
+ [SUMMARY] ALL EVALUATION TESTS PASSED (100% Reliability)
+======================================================================
+
+
+[Step 3/4] Verifying 3-Run Reproducibility...
+======================================================================
+ REPRODUCIBILITY VERIFICATION: 3 UNTOUCHED RUNS
+======================================================================
+
+---> Executing Run #1 into output/run1.csv...
+======================================================================
+ FREIGHTTIGER SHIPPING WATCH: BATCH ANALYTICS & RAG PIPELINE
+======================================================================
+
+[1/5] Loading records from: shipment_records.csv
+      Calculated metrics across 7 routes and 104 weeks (728 route-week records).
+
+[2/5] Running Anomaly Detection Layer...
+      Identified 20 anomalous cost spikes (708 within normal bounds).
+
+[3/5] Initializing Hybrid RAG Retriever from: context_notes.csv
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]Loading weights: 100%|██████████| 103/103 [00:00<00:00, 4339.88it/s]
+      Indexed 10 context notes.
+
+[4/5] Evaluating Spikes with Guardrail Reasoner (Temp=0)...
+
+[5/5] Exporting Output to: output/run1.csv
+      Successfully saved 20 records to output/run1.csv
+      Saved token & cost telemetry to output/token_cost_run1.json
+
+======================================================================
+ EXECUTION & COST TELEMETRY SUMMARY
+======================================================================
+ Model Used:         gemini-3.5-flash-lite
+ Pricing Tier:       Google AI Studio Free Tier (15 RPM / 250K TPM / 500 RPD)
+ Total LLM Calls:    20
+ Total Tokens:       6,461 (5,318 in, 1,143 out)
+ Nominal USD Cost:   $0.000742
+ Actual Billed Cost: $0.00 (Zero-Cost Free Tier)
+ Total Runtime:      31.64 seconds
+======================================================================
+
+     Run #1 MD5 Hash: f7676eacf4e3cf0b8673a14a7e89e21d
+
+---> Executing Run #2 into output/run2.csv...
+======================================================================
+ FREIGHTTIGER SHIPPING WATCH: BATCH ANALYTICS & RAG PIPELINE
+======================================================================
+
+[1/5] Loading records from: shipment_records.csv
+      Calculated metrics across 7 routes and 104 weeks (728 route-week records).
+
+[2/5] Running Anomaly Detection Layer...
+      Identified 20 anomalous cost spikes (708 within normal bounds).
+
+[3/5] Initializing Hybrid RAG Retriever from: context_notes.csv
+Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]Loading weights: 100%|██████████| 103/103 [00:00<00:00, 3657.75it/s]
+      Indexed 10 context notes.
+
+[4/5] Evaluating Spikes with Guardrail Reasoner (Temp=0)...
+
+[5/5] Exporting Output to: output/run2.csv
+      Successfully saved 20 records to output/run2.csv
+      Saved token & cost telemetry to output/token_cost_run2.json
+
+======================================================================
+ EXECUTION & COST TELEMETRY SUMMARY
+======================================================================
+ Model Used:         gemini-3.5-flash-lite
+ Pricing Tier:       Google AI Studio Free Tier (15 RPM / 250K TPM / 500 RPD)
+ Total LLM Calls:    20
+ Total Tokens:       0 (0 in, 0 out)
+ Nominal USD Cost:   $0.000000
+ Actual Billed Cost: $0.00 (Zero-Cost Free Tier)
+ Total Runtime:      4.01 seconds
+======================================================================
+
+     Run #2 MD5 Hash: f7676eacf4e3cf0b8673a14a7e89e21d
+
+---> Executing Run #3 into output/run3.csv...
+======================================================================
+ FREIGHTTIGER SHIPPING WATCH: BATCH ANALYTICS & RAG PIPELINE
+======================================================================
+
+[1/5] Loading records from: shipment_records.csv
+      Calculated metrics across 7 routes and 104 weeks (728 route-week records).
+
+[2/5] Running Anomaly Detection Layer...
+      Identified 20 anomalous cost spikes (708 within normal bounds).
+
+[3/5] Initializing Hybrid RAG Retriever from: context_notes.csv
+Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]Loading weights: 100%|██████████| 103/103 [00:00<00:00, 3698.21it/s]
+      Indexed 10 context notes.
+
+[4/5] Evaluating Spikes with Guardrail Reasoner (Temp=0)...
+
+[5/5] Exporting Output to: output/run3.csv
+      Successfully saved 20 records to output/run3.csv
+      Saved token & cost telemetry to output/token_cost_run3.json
+
+======================================================================
+ EXECUTION & COST TELEMETRY SUMMARY
+======================================================================
+ Model Used:         gemini-3.5-flash-lite
+ Pricing Tier:       Google AI Studio Free Tier (15 RPM / 250K TPM / 500 RPD)
+ Total LLM Calls:    20
+ Total Tokens:       0 (0 in, 0 out)
+ Nominal USD Cost:   $0.000000
+ Actual Billed Cost: $0.00 (Zero-Cost Free Tier)
+ Total Runtime:      3.82 seconds
+======================================================================
+
+     Run #3 MD5 Hash: f7676eacf4e3cf0b8673a14a7e89e21d
+
+======================================================================
+ [SUCCESS] 3-RUN REPRODUCIBILITY TEST PASSED: 100% IDENTICAL OUTPUTS
+ Consistent MD5: f7676eacf4e3cf0b8673a14a7e89e21d
+ Saved verification report to: output/reproducibility_report.md
+======================================================================
+
+
+[Step 4/4] Starting Flask Dashboard & Interactive Assistant...
+--> Web Dashboard live on http://0.0.0.0:5000
+[2026-10-14 14:21:16 +0000] [260] [INFO] Starting gunicorn 26.2.0
+[2026-10-14 14:21:16 +0000] [260] [INFO] Listening at: http://0.0.0.0:5000 (260)
+[2026-10-14 14:21:16 +0000] [260] [INFO] Using worker: gthread
+[2026-10-14 14:21:16 +0000] [262] [INFO] Booting worker with pid: 262
+[2026-10-14 14:21:16 +0000] [263] [INFO] Booting worker with pid: 263
+[2026-10-14 14:21:16 +0000] [260] [INFO] Control socket listening at /root/.gunicorn/gunicorn.ctl
+==========================================================
+ FREIGHTTIGER SHIPPING WATCH ASSISTANT (CONTAINERIZED)
+==========================================================
+[2026-10-14 14:21:18] [INFO   ] [CONTAINER] [SYSTEM] Container booted. Starting pipeline...
+
+[INFO] Verified output/sample_output_format.csv is present. Skipping redundant generation for instant startup.
+
+--> Starting Flask Dashboard & Interactive Assistant on http://0.0.0.0:5000...
+[2026-10-14 14:21:19 +0000] [21] [INFO] Starting gunicorn 26.2.0
+[2026-10-14 14:21:19 +0000] [21] [INFO] Listening at: http://0.0.0.0:5000 (21)
+[2026-10-14 14:21:19 +0000] [21] [INFO] Using worker: gthread
+[2026-10-14 14:21:19 +0000] [23] [INFO] Booting worker with pid: 23
+[2026-10-14 14:21:19 +0000] [24] [INFO] Booting worker with pid: 24
+[2026-10-14 14:21:19 +0000] [21] [INFO] Control socket listening at /root/.gunicorn/gunicorn.ctl
+172.18.0.1 - - [14/Oct/2026:14:21:37 +0000] "GET /api/data HTTP/1.1" 200 9551 "-" "Python-urllib/3.10"
+172.18.0.1 - - [14/Oct/2026:14:21:48 +0000] "GET / HTTP/1.1" 200 8156 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36 Edg/155.0.0.0"
+172.18.0.1 - - [14/Oct/2026:14:21:48 +0000] "GET /static/style.css HTTP/1.1" 304 0 "http://localhost:5000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36 Edg/155.0.0.0"
+172.18.0.1 - - [14/Oct/2026:14:21:48 +0000] "GET /static/app.js HTTP/1.1" 304 0 "http://localhost:5000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36 Edg/155.0.0.0"
+172.18.0.1 - - [14/Oct/2026:14:21:49 +0000] "GET /api/data HTTP/1.1" 200 9551 "http://localhost:5000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36 Edg/155.0.0.0"
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]Loading weights: 100%|██████████| 103/103 [00:00<00:00, 3663.46it/s]
+172.18.0.1 - - [14/Oct/2026:14:21:52 +0000] "GET /api/notes HTTP/1.1" 200 2855 "http://localhost:5000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36 Edg/155.0.0.0"
+==========================================================
+ FREIGHTTIGER SHIPPING WATCH ASSISTANT (CONTAINERIZED)
+==========================================================
+[2026-10-14 14:23:20] [INFO   ] [CONTAINER] [SYSTEM] Container booted. Starting pipeline...
+
+[INFO] Verified output/sample_output_format.csv is present. Skipping redundant generation for instant startup.
+
+--> Starting Flask Dashboard & Interactive Assistant on http://0.0.0.0:5000...
+[2026-10-14 14:23:20 +0000] [21] [INFO] Starting gunicorn 26.2.0
+[2026-10-14 14:23:20 +0000] [21] [INFO] Listening at: http://0.0.0.0:5000 (21)
+[2026-10-14 14:23:20 +0000] [21] [INFO] Using worker: gthread
+[2026-10-14 14:23:20 +0000] [23] [INFO] Booting worker with pid: 23
+[2026-10-14 14:23:20 +0000] [24] [INFO] Booting worker with pid: 24
+[2026-10-14 14:23:20 +0000] [21] [INFO] Control socket listening at /root/.gunicorn/gunicorn.ctl

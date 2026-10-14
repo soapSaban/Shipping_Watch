@@ -1,0 +1,20 @@
+[2026-10-14 19:34:25.913] [INFO   ] [HOST] [SYSTEM] Unified logger initialized successfully.
+[2026-10-14 19:34:25.915] [INFO   ] [HOST] [DIAGNOSTIC] System monitor test log entry: SUCCESS
+[2026-10-14 19:46:40.414] [INFO   ] [HOST] [SYSTEM] Unified logger initialized successfully.
+[2026-10-14 19:46:40.423] [INFO   ] [HOST] [PIPELINE] Starting Batch Analytics & RAG Pipeline. Input: data/shipment_records.csv
+[2026-10-14 19:46:40.424] [INFO   ] [HOST] [PIPELINE] [1/5] Loading and aggregating shipments from data/shipment_records.csv
+[2026-10-14 19:46:40.468] [INFO   ] [HOST] [PIPELINE] Successfully saved 20 records to output/sample_output_format.csv
+[2026-10-14 19:46:40.470] [INFO   ] [HOST] [TELEMETRY] Saved token & cost telemetry to output/token_cost_log.json
+[2026-10-14 19:46:59.247] [INFO   ] [HOST] [SYSTEM] Unified logger initialized successfully.
+[2026-10-14 19:46:59.251] [INFO   ] [HOST] [PIPELINE] Starting Batch Analytics & RAG Pipeline. Input: shipment_records.csv
+[2026-10-14 19:46:59.252] [INFO   ] [HOST] [PIPELINE] [1/5] Loading and aggregating shipments from shipment_records.csv
+[2026-10-14 19:46:59.302] [INFO   ] [HOST] [PIPELINE] Successfully saved 20 records to output\run1.csv
+[2026-10-14 19:46:59.309] [INFO   ] [HOST] [TELEMETRY] Saved token & cost telemetry to output\token_cost_run1.json
+[2026-10-14 19:46:59.313] [INFO   ] [HOST] [PIPELINE] Starting Batch Analytics & RAG Pipeline. Input: shipment_records.csv
+[2026-10-14 19:46:59.313] [INFO   ] [HOST] [PIPELINE] [1/5] Loading and aggregating shipments from shipment_records.csv
+[2026-10-14 19:46:59.350] [INFO   ] [HOST] [PIPELINE] Successfully saved 20 records to output\run2.csv
+[2026-10-14 19:46:59.351] [INFO   ] [HOST] [TELEMETRY] Saved token & cost telemetry to output\token_cost_run2.json
+[2026-10-14 19:46:59.354] [INFO   ] [HOST] [PIPELINE] Starting Batch Analytics & RAG Pipeline. Input: shipment_records.csv
+[2026-10-14 19:46:59.354] [INFO   ] [HOST] [PIPELINE] [1/5] Loading and aggregating shipments from shipment_records.csv
+[2026-10-14 19:46:59.399] [INFO   ] [HOST] [PIPELINE] Successfully saved 20 records to output\run3.csv
+[2026-10-14 19:46:59.401] [INFO   ] [HOST] [TELEMETRY] Saved token & cost telemetry to output\token_cost_run3.json
