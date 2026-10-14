@@ -1,4 +1,4 @@
-# 🚚 Shipping Watch: Smart Cost Anomaly & RAG Assistant
+# Shipping Watch: Smart Cost Anomaly & RAG Assistant
 
 > **24-Hour AI Challenge Submission**  
 > **Role:** Software Engineering Intern (AI) — Case Study Round  
@@ -7,7 +7,7 @@
 
 ---
 
-## ⚡ Quick Start: Run Everything in One Command
+## Quick Start: Run Everything in One Command
 
 To build the environment, execute the batch analytics pipeline, verify 3-run reproducibility, generate the output CSV, and boot the web dashboard:
 
@@ -163,7 +163,7 @@ By running the Anomaly Detection Gate before the LLM, only the ~20 candidate spi
 
 ---
 
-## 📁 Repository Structure
+## Repository Structure
 
 ```
 Shipping_Watch/
@@ -207,7 +207,7 @@ Shipping_Watch/
 
 ---
 
-## 🎤 10-Minute Walkthrough Talking Points (Round 2)
+## 10-Minute Walkthrough Talking Points (Round 2)
 
 1. **Problem Framing & Exact Baselines (2 min)**:
    * Walk through the Monday–Sunday weekly grouping, trailing 8-week strictly prior history baseline, and leave-one-out peer average by `route_type`. Show 100% mathematical match on the sample rows.
