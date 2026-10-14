@@ -526,3 +526,16 @@ Loading weights: 100%|██████████| 103/103 [00:00<00:00, 4110
 Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]
 Loading weights: 100%|██████████| 103/103 [00:00<00:00, 3566.35it/s]
 172.18.0.1 - - [14/Oct/2026:14:37:31 +0000] "POST /api/chat HTTP/1.1" 200 183 "http://localhost:5000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36 Edg/155.0.0.0"
+172.18.0.1 - - [14/Oct/2026:14:51:02 +0000] "GET / HTTP/1.1" 200 8156 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36 Edg/155.0.0.0"
+172.18.0.1 - - [14/Oct/2026:14:51:02 +0000] "GET /static/style.css HTTP/1.1" 304 0 "http://localhost:5000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36 Edg/155.0.0.0"
+172.18.0.1 - - [14/Oct/2026:14:51:02 +0000] "GET /static/app.js HTTP/1.1" 200 0 "http://localhost:5000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36 Edg/155.0.0.0"
+172.18.0.1 - - [14/Oct/2026:14:51:02 +0000] "GET /api/data HTTP/1.1" 200 8446 "http://localhost:5000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36 Edg/155.0.0.0"
+172.18.0.1 - - [14/Oct/2026:14:51:04 +0000] "GET / HTTP/1.1" 200 8141 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36 Edg/155.0.0.0"
+172.18.0.1 - - [14/Oct/2026:14:51:04 +0000] "GET /static/style.css HTTP/1.1" 304 0 "http://localhost:5000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36 Edg/155.0.0.0"
+172.18.0.1 - - [14/Oct/2026:14:51:04 +0000] "GET /static/app.js HTTP/1.1" 304 0 "http://localhost:5000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36 Edg/155.0.0.0"
+172.18.0.1 - - [14/Oct/2026:14:51:04 +0000] "GET /api/data HTTP/1.1" 200 9551 "http://localhost:5000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36 Edg/155.0.0.0"
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]Loading weights: 100%|██████████| 103/103 [00:00<00:00, 3422.21it/s]
+Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]Loading weights: 100%|██████████| 103/103 [00:00<00:00, 3718.39it/s]
+172.18.0.1 - - [14/Oct/2026:14:51:06 +0000] "GET /api/notes HTTP/1.1" 200 2855 "http://localhost:5000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36 Edg/155.0.0.0"
+172.18.0.1 - - [14/Oct/2026:14:51:07 +0000] "GET /api/notes HTTP/1.1" 200 2855 "http://localhost:5000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36 Edg/155.0.0.0"

@@ -16,12 +16,6 @@ from flask import Flask, render_template, request, jsonify, send_file
 # Add project root to sys.path
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
-from run_pipeline import run_pipeline
-from src.engine import ShippingAnalyticsEngine
-from src.retriever import HybridContextRetriever
-from src.reasoner import FreightCostReasoner
-from src.telemetry import TokenCostTracker
-
 app = Flask(__name__)
 
 # File Paths
@@ -44,6 +38,21 @@ CACHED_SUMMARY = None
 CACHED_MTIME = 0.0
 
 
+def load_context_notes(notes_path: str):
+    """Lightweight note loader without requiring heavy ML vector libraries on server boot."""
+    notes = []
+    if os.path.exists(notes_path):
+        with open(notes_path, mode="r", encoding="utf-8") as f:
+            for row in csv.DictReader(f):
+                notes.append({
+                    "note_id": row["note_id"].strip(),
+                    "date": row["date"].strip(),
+                    "applies_to": row["applies_to"].strip(),
+                    "note": row["note"].strip()
+                })
+    return notes
+
+
 def get_or_run_pipeline(force_rerun=False):
     """Loads results from CSV or executes pipeline if not yet run. Auto-reloads if CSV changes."""
     global CACHED_RESULTS, CACHED_SUMMARY, CACHED_MTIME
@@ -61,7 +70,8 @@ def get_or_run_pipeline(force_rerun=False):
         CACHED_MTIME = current_mtime
         return CACHED_RESULTS, CACHED_SUMMARY
 
-    # Run pipeline
+    # Lazy load and run pipeline only if CSV is missing or explicitly requested
+    from run_pipeline import run_pipeline
     results, summary = run_pipeline(
         records_path=RECORDS_FILE,
         notes_path=NOTES_FILE,
@@ -123,8 +133,8 @@ def trigger_pipeline():
 @app.route("/api/notes")
 def get_notes():
     """Returns all context notes."""
-    retriever = HybridContextRetriever(NOTES_FILE)
-    return jsonify({"notes": retriever.notes})
+    notes = load_context_notes(NOTES_FILE)
+    return jsonify({"notes": notes})
 
 
 @app.route("/api/download")
@@ -148,14 +158,14 @@ def chat():
         return jsonify({"response": "Please enter a question about shipping routes, spikes, or context notes."})
 
     results, _ = get_or_run_pipeline()
-    retriever = HybridContextRetriever(NOTES_FILE)
+    notes = load_context_notes(NOTES_FILE)
 
     # Context assembly for assistant
     flagged_spikes = [
         f"• {r['route']} (Week of {r['week_of']}): Cost {r['cost_per_tonne_km']} INR/t-km ({r['vs_own_history']}, {r['vs_similar_routes']}) -> Flagged: {r['flagged']} (Note: {r['matched_note_id'] or 'None'}). Reason: {r['reason']}"
         for r in results[:10]
     ]
-    notes_list = [f"[{n['note_id']}] {n['date']} ({n['applies_to']}): {n['note']}" for n in retriever.notes]
+    notes_list = [f"[{n['note_id']}] {n['date']} ({n['applies_to']}): {n['note']}" for n in notes]
 
     system_context = (
         "You are the Shipping Watch AI Assistant. Answer questions accurately based ONLY on the provided data.\n\n"
