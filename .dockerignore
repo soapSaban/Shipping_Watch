@@ -1,0 +1,26 @@
+# Exclude secrets
+.env
+*.env
+
+# Exclude git
+.git/
+.gitignore
+
+# Exclude python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.pytest_cache/
+.coverage
+
+# Exclude local virtual environments
+.venv/
+venv/
+env/
+
+# Exclude temporary output files (they will be generated inside or mounted)
+scratch/
+run1.csv
+run2.csv
+run3.csv

@@ -1,0 +1,42 @@
+# Environment and Secrets (CRITICAL: Never commit API keys)
+.env
+.env.local
+*.env
+
+# Python bytecode and caches
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Virtual Environments
+.venv/
+venv/
+env/
+ENV/
+build/
+dist/
+*.egg-info/
+
+# IDE and Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS files
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+.DS_Store
+
+# Temporary outputs (keep sample and committed logs, ignore ad-hoc test runs)
+scratch/
+run1.csv
+run2.csv
+run3.csv
+*.log
+logs/

@@ -1,0 +1,21 @@
+services:
+  shipping-watch:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: shipping_watch_assistant
+    ports:
+      - "5000:5000"
+    environment:
+      - GEMINI_API_KEY=${GEMINI_API_KEY}
+      - GEMINI_MODEL=${GEMINI_MODEL:-gemini-3.5-flash-lite}
+      - PORT=5000
+    volumes:
+      # Mount output, logs, live code, and frontend assets for instant live updates
+      - ./output:/app/output
+      - ./logs:/app/logs
+      - ./src:/app/src
+      - ./templates:/app/templates
+      - ./static:/app/static
+      - ./entrypoint.sh:/app/entrypoint.sh
+    restart: unless-stopped
