@@ -1,5 +1,5 @@
 """
-Centralized System Logging Module for FreightTiger Shipping Watch
+Centralized System Logging Module for Shipping Watch
 Streams logs to console and persistently writes to logs/system_monitor.log.
 Captures timestamps, log level, process context (CONTAINER vs HOST), return codes,
 downloads, model queries, and full exception tracebacks.

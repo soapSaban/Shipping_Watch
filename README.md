@@ -1,4 +1,4 @@
-# 🚚 FreightTiger Shipping Watch: Smart Cost Anomaly & RAG Assistant
+# 🚚 Shipping Watch: Smart Cost Anomaly & RAG Assistant
 
 > **24-Hour AI Challenge Submission**  
 > **Role:** Software Engineering Intern (AI) — Case Study Round  

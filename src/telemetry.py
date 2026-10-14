@@ -1,5 +1,5 @@
 """
-Telemetry and Cost Tracking Module for FreightTiger Shipping Watch
+Telemetry and Cost Tracking Module for Shipping Watch
 Tracks LLM calls, token usage (input/output), latency, and costs based on published model rates.
 Produces JSON logs and formatted Markdown summaries for evaluation and README.
 """

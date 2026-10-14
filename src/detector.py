@@ -1,5 +1,5 @@
 """
-Anomaly Detection Layer for FreightTiger Shipping Watch
+Anomaly Detection Layer for Shipping Watch
 Identifies route-week entries where cost is rising and out of the ordinary
 compared to its own history (trailing 8 weeks) or peer routes in the same week.
 """

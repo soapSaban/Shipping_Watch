@@ -1,5 +1,5 @@
 """
-Reasoner and Explanation Module for FreightTiger Shipping Watch
+Reasoner and Explanation Module for Shipping Watch
 Generates plain-English justifications or unjustified verdicts backed by retrieved context notes.
 Supports:
 1. Google Gemini Flash Lite API (via official SDK, temperature=0.0)
@@ -181,7 +181,7 @@ class FreightCostReasoner:
         closest_note: Optional[Dict[str, Any]]
     ) -> Tuple[Dict[str, Any], int, int]:
         """Calls Gemini Flash Lite with temperature=0.0."""
-        prompt = f"""You are FreightTiger's Shipping Cost Anomaly Assistant.
+        prompt = f"""You are the Shipping Cost Anomaly Assistant.
 Route: {route}
 Week Of: {week_of}
 Cost per tonne-km: {cost_per_tonne_km} INR

@@ -1,5 +1,5 @@
 """
-Unified Single-Command Launcher for FreightTiger Shipping Watch
+Unified Single-Command Launcher for Shipping Watch
 Executes:
 1. Core Analytics & Hybrid RAG Pipeline -> generates output/sample_output_format.csv & token_cost_log.json
 2. Evaluation Harness -> validates ground truth sample rows and anti-hallucination guardrails
@@ -31,7 +31,7 @@ def open_browser(url: str, delay_seconds: float = 1.2):
 
 def main():
     print("=" * 75)
-    print(" 🚀 FREIGHTTIGER SHIPPING WATCH: UNIFIED 1-COMMAND EXECUTION")
+    print(" 🚀 SHIPPING WATCH: UNIFIED 1-COMMAND EXECUTION")
     print("=" * 75)
 
     # Step 1: Run Full Analytics & RAG Pipeline

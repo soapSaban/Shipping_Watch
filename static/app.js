@@ -1,4 +1,4 @@
-// Frontend application logic for FreightTiger Shipping Watch
+// Frontend application logic for Shipping Watch
 document.addEventListener("DOMContentLoaded", () => {
     loadDashboardData();
     loadContextNotes();

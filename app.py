@@ -1,5 +1,5 @@
 """
-Flask Web Application & Interactive Assistant for FreightTiger Shipping Watch
+Flask Web Application & Interactive Assistant for Shipping Watch
 Provides:
 1. Executive Dashboard: Anomaly table, metric cards, route filters, note inspector
 2. REST API: Trigger pipeline, fetch telemetry, download CSV contract
@@ -158,7 +158,7 @@ def chat():
     notes_list = [f"[{n['note_id']}] {n['date']} ({n['applies_to']}): {n['note']}" for n in retriever.notes]
 
     system_context = (
-        "You are FreightTiger's Shipping Watch AI Assistant. Answer questions accurately based ONLY on the provided data.\n\n"
+        "You are the Shipping Watch AI Assistant. Answer questions accurately based ONLY on the provided data.\n\n"
         "KEY FINDINGS & FLAGGED SPIKES:\n" + "\n".join(flagged_spikes) + "\n\n"
         "AVAILABLE CONTEXT NOTES:\n" + "\n".join(notes_list)
     )
@@ -200,5 +200,5 @@ def chat():
 if __name__ == "__main__":
     port = int(os.getenv("PORT", 5000))
     host = os.getenv("HOST", "0.0.0.0")
-    print(f"Starting FreightTiger Shipping Watch on http://{host}:{port}")
+    print(f"Starting Shipping Watch on http://{host}:{port}")
     app.run(host=host, port=port, debug=False)

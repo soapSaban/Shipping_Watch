@@ -1,5 +1,5 @@
 """
-Core Analytics Engine for FreightTiger Shipping Watch
+Core Analytics Engine for Shipping Watch
 Computes:
 1. Monday-to-Sunday weekly aggregations of shipment records
 2. cost_per_tonne_km = sum(freight_cost) / sum(quantity * distance)

@@ -1,5 +1,5 @@
 """
-Evaluation Harness for FreightTiger Shipping Watch
+Evaluation Harness for Shipping Watch
 Performs unit tests and precision checks against known ground truth rows:
 1. Exact mathematical replication of sample_output_format_v2.csv
 2. Anti-hallucination guardrail assertions

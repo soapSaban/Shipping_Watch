@@ -9,7 +9,7 @@ log_msg() {
 }
 
 log_msg "=========================================================="
-log_msg " FREIGHTTIGER SHIPPING WATCH ASSISTANT (CONTAINERIZED)"
+log_msg " SHIPPING WATCH ASSISTANT (CONTAINERIZED)"
 log_msg "=========================================================="
 log_msg "[$(date -u +'%Y-%m-%d %H:%M:%S')] [INFO   ] [CONTAINER] [SYSTEM] Container booted. Starting pipeline..."
 

@@ -1,13 +1,13 @@
 [2026-10-14 19:34:25.913] [INFO   ] [HOST] [SYSTEM] Unified logger initialized successfully.
 [2026-10-14 19:34:25.915] [INFO   ] [HOST] [DIAGNOSTIC] System monitor test log entry: SUCCESS
 ==========================================================
- FREIGHTTIGER SHIPPING WATCH ASSISTANT (CONTAINERIZED)
+ SHIPPING WATCH ASSISTANT (CONTAINERIZED)
 ==========================================================
 [2026-10-14 14:07:26] [INFO   ] [CONTAINER] [SYSTEM] Container booted. Starting pipeline...
 
 [Step 1/4] Running Core Analytics & Hybrid RAG Pipeline...
 ======================================================================
- FREIGHTTIGER SHIPPING WATCH: BATCH ANALYTICS & RAG PIPELINE
+ SHIPPING WATCH: BATCH ANALYTICS & RAG PIPELINE
 ======================================================================
 
 [1/5] Loading records from: shipment_records.csv
@@ -18,7 +18,9 @@
 
 [3/5] Initializing Hybrid RAG Retriever from: context_notes.csv
 Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
-Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]Loading weights: 100%|██████████| 103/103 [00:00<00:00, 4172.71it/s]
+
+Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]
+Loading weights: 100%|██████████| 103/103 [00:00<00:00, 4172.71it/s]
       Indexed 10 context notes.
 
 [4/5] Evaluating Spikes with Guardrail Reasoner (Temp=0)...
@@ -45,7 +47,9 @@ Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF
  EVALUATION HARNESS: GROUND TRUTH & GUARDRAIL INTEGRITY
 ======================================================================
 Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
-Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]Loading weights: 100%|██████████| 103/103 [00:00<00:00, 3642.02it/s]
+
+Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]
+Loading weights: 100%|██████████| 103/103 [00:00<00:00, 3642.02it/s]
 
 [Test 1] Validating Mathematical Fidelity against sample_output_format_v2.csv:
  [PASS] Delhi-Jaipur (2024-11-11): Cost=4.17, Hist=+35.5% vs this route's past average, Peer=+21.0% vs similar-length routes this week
@@ -68,7 +72,7 @@ Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF
 
 ---> Executing Run #1 into output/run1.csv...
 ======================================================================
- FREIGHTTIGER SHIPPING WATCH: BATCH ANALYTICS & RAG PIPELINE
+ SHIPPING WATCH: BATCH ANALYTICS & RAG PIPELINE
 ======================================================================
 
 [1/5] Loading records from: shipment_records.csv
@@ -79,7 +83,9 @@ Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF
 
 [3/5] Initializing Hybrid RAG Retriever from: context_notes.csv
 Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
-Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]Loading weights: 100%|██████████| 103/103 [00:00<00:00, 4284.06it/s]
+
+Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]
+Loading weights: 100%|██████████| 103/103 [00:00<00:00, 4284.06it/s]
       Indexed 10 context notes.
 
 [4/5] Evaluating Spikes with Guardrail Reasoner (Temp=0)...
@@ -104,7 +110,7 @@ Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF
 
 ---> Executing Run #2 into output/run2.csv...
 ======================================================================
- FREIGHTTIGER SHIPPING WATCH: BATCH ANALYTICS & RAG PIPELINE
+ SHIPPING WATCH: BATCH ANALYTICS & RAG PIPELINE
 ======================================================================
 
 [1/5] Loading records from: shipment_records.csv
@@ -114,7 +120,9 @@ Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF
       Identified 20 anomalous cost spikes (708 within normal bounds).
 
 [3/5] Initializing Hybrid RAG Retriever from: context_notes.csv
-Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]Loading weights: 100%|██████████| 103/103 [00:00<00:00, 3697.51it/s]
+
+Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]
+Loading weights: 100%|██████████| 103/103 [00:00<00:00, 3697.51it/s]
       Indexed 10 context notes.
 
 [4/5] Evaluating Spikes with Guardrail Reasoner (Temp=0)...
@@ -139,7 +147,7 @@ Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF
 
 ---> Executing Run #3 into output/run3.csv...
 ======================================================================
- FREIGHTTIGER SHIPPING WATCH: BATCH ANALYTICS & RAG PIPELINE
+ SHIPPING WATCH: BATCH ANALYTICS & RAG PIPELINE
 ======================================================================
 
 [1/5] Loading records from: shipment_records.csv
@@ -149,7 +157,9 @@ Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF
       Identified 20 anomalous cost spikes (708 within normal bounds).
 
 [3/5] Initializing Hybrid RAG Retriever from: context_notes.csv
-Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]Loading weights: 100%|██████████| 103/103 [00:00<00:00, 3780.04it/s]
+
+Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]
+Loading weights: 100%|██████████| 103/103 [00:00<00:00, 3780.04it/s]
       Indexed 10 context notes.
 
 [4/5] Evaluating Spikes with Guardrail Reasoner (Temp=0)...
@@ -193,17 +203,23 @@ Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF
 172.18.0.1 - - [14/Oct/2026:14:11:05 +0000] "GET /api/health HTTP/1.1" 200 63 "-" "Python-urllib/3.10"
 172.18.0.1 - - [14/Oct/2026:14:11:37 +0000] "GET /api/data HTTP/1.1" 200 10800 "-" "Python-urllib/3.10"
 Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
-Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]Loading weights: 100%|██████████| 103/103 [00:00<00:00, 3944.97it/s]
+
+Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]
+Loading weights: 100%|██████████| 103/103 [00:00<00:00, 3944.97it/s]
 172.18.0.1 - - [14/Oct/2026:14:11:55 +0000] "POST /api/chat HTTP/1.1" 200 370 "-" "Python-urllib/3.10"
 172.18.0.1 - - [14/Oct/2026:14:12:19 +0000] "GET / HTTP/1.1" 200 8156 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36 Edg/155.0.0.0"
 172.18.0.1 - - [14/Oct/2026:14:12:19 +0000] "GET /static/style.css HTTP/1.1" 200 0 "http://localhost:5000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36 Edg/155.0.0.0"
 172.18.0.1 - - [14/Oct/2026:14:12:19 +0000] "GET /static/app.js HTTP/1.1" 200 0 "http://localhost:5000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36 Edg/155.0.0.0"
 172.18.0.1 - - [14/Oct/2026:14:12:19 +0000] "GET /api/data HTTP/1.1" 200 10800 "http://localhost:5000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36 Edg/155.0.0.0"
 172.18.0.1 - - [14/Oct/2026:14:12:19 +0000] "GET /favicon.ico HTTP/1.1" 404 207 "http://localhost:5000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36 Edg/155.0.0.0"
-Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]Loading weights: 100%|██████████| 103/103 [00:00<00:00, 3917.49it/s]
+
+Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]
+Loading weights: 100%|██████████| 103/103 [00:00<00:00, 3917.49it/s]
 172.18.0.1 - - [14/Oct/2026:14:12:24 +0000] "GET /api/notes HTTP/1.1" 200 2855 "http://localhost:5000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36 Edg/155.0.0.0"
 Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
-Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]Loading weights: 100%|██████████| 103/103 [00:00<00:00, 3653.73it/s]
+
+Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]
+Loading weights: 100%|██████████| 103/103 [00:00<00:00, 3653.73it/s]
 172.18.0.1 - - [14/Oct/2026:14:14:20 +0000] "POST /api/chat HTTP/1.1" 200 545 "http://localhost:5000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36 Edg/155.0.0.0"
 [2026-10-14 19:46:40.414] [INFO   ] [HOST] [SYSTEM] Unified logger initialized successfully.
 [2026-10-14 19:46:40.423] [INFO   ] [HOST] [PIPELINE] Starting Batch Analytics & RAG Pipeline. Input: data/shipment_records.csv
@@ -224,11 +240,13 @@ Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF
 [2026-10-14 19:46:59.399] [INFO   ] [HOST] [PIPELINE] Successfully saved 20 records to output\run3.csv
 [2026-10-14 19:46:59.401] [INFO   ] [HOST] [TELEMETRY] Saved token & cost telemetry to output\token_cost_run3.json
 172.18.0.1 - - [14/Oct/2026:14:17:53 +0000] "GET /api/health HTTP/1.1" 200 63 "-" "Python-urllib/3.10"
-Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]Loading weights: 100%|██████████| 103/103 [00:00<00:00, 3668.19it/s]
+
+Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]
+Loading weights: 100%|██████████| 103/103 [00:00<00:00, 3668.19it/s]
 172.18.0.1 - - [14/Oct/2026:14:18:56 +0000] "GET /api/data HTTP/1.1" 200 10800 "-" "Python-urllib/3.10"
 172.18.0.1 - - [14/Oct/2026:14:18:59 +0000] "POST /api/chat HTTP/1.1" 200 735 "http://localhost:5000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36 Edg/155.0.0.0"
 ======================================================================
- FREIGHTTIGER SHIPPING WATCH: BATCH ANALYTICS & RAG PIPELINE
+ SHIPPING WATCH: BATCH ANALYTICS & RAG PIPELINE
 ======================================================================
 
 [1/5] Loading records from: data/shipment_records.csv
@@ -238,18 +256,20 @@ Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF
       Identified 20 anomalous cost spikes (708 within normal bounds).
 
 [3/5] Initializing Hybrid RAG Retriever from: data/context_notes.csv
-Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]Loading weights: 100%|██████████| 103/103 [00:00<00:00, 3419.50it/s]
+
+Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]
+Loading weights: 100%|██████████| 103/103 [00:00<00:00, 3419.50it/s]
       Indexed 10 context notes.
 
 [4/5] Evaluating Spikes with Guardrail Reasoner (Temp=0)...
 ==========================================================
- FREIGHTTIGER SHIPPING WATCH ASSISTANT (CONTAINERIZED)
+ SHIPPING WATCH ASSISTANT (CONTAINERIZED)
 ==========================================================
 [2026-10-14 14:19:44] [INFO   ] [CONTAINER] [SYSTEM] Container booted. Starting pipeline...
 
 [Step 1/4] Running Core Analytics & Hybrid RAG Pipeline...
 ======================================================================
- FREIGHTTIGER SHIPPING WATCH: BATCH ANALYTICS & RAG PIPELINE
+ SHIPPING WATCH: BATCH ANALYTICS & RAG PIPELINE
 ======================================================================
 
 [1/5] Loading records from: shipment_records.csv
@@ -260,7 +280,9 @@ Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF
 
 [3/5] Initializing Hybrid RAG Retriever from: context_notes.csv
 Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
-Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]Loading weights: 100%|██████████| 103/103 [00:00<00:00, 3502.42it/s]
+
+Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]
+Loading weights: 100%|██████████| 103/103 [00:00<00:00, 3502.42it/s]
       Indexed 10 context notes.
 
 [4/5] Evaluating Spikes with Guardrail Reasoner (Temp=0)...
@@ -287,7 +309,9 @@ Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF
  EVALUATION HARNESS: GROUND TRUTH & GUARDRAIL INTEGRITY
 ======================================================================
 Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
-Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]Loading weights: 100%|██████████| 103/103 [00:00<00:00, 3490.34it/s]
+
+Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]
+Loading weights: 100%|██████████| 103/103 [00:00<00:00, 3490.34it/s]
 
 [Test 1] Validating Mathematical Fidelity against sample_output_format_v2.csv:
  [PASS] Delhi-Jaipur (2024-11-11): Cost=4.17, Hist=+35.5% vs this route's past average, Peer=+21.0% vs similar-length routes this week
@@ -310,7 +334,7 @@ Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF
 
 ---> Executing Run #1 into output/run1.csv...
 ======================================================================
- FREIGHTTIGER SHIPPING WATCH: BATCH ANALYTICS & RAG PIPELINE
+ SHIPPING WATCH: BATCH ANALYTICS & RAG PIPELINE
 ======================================================================
 
 [1/5] Loading records from: shipment_records.csv
@@ -321,7 +345,9 @@ Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF
 
 [3/5] Initializing Hybrid RAG Retriever from: context_notes.csv
 Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
-Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]Loading weights: 100%|██████████| 103/103 [00:00<00:00, 4339.88it/s]
+
+Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]
+Loading weights: 100%|██████████| 103/103 [00:00<00:00, 4339.88it/s]
       Indexed 10 context notes.
 
 [4/5] Evaluating Spikes with Guardrail Reasoner (Temp=0)...
@@ -346,7 +372,7 @@ Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF
 
 ---> Executing Run #2 into output/run2.csv...
 ======================================================================
- FREIGHTTIGER SHIPPING WATCH: BATCH ANALYTICS & RAG PIPELINE
+ SHIPPING WATCH: BATCH ANALYTICS & RAG PIPELINE
 ======================================================================
 
 [1/5] Loading records from: shipment_records.csv
@@ -356,7 +382,9 @@ Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF
       Identified 20 anomalous cost spikes (708 within normal bounds).
 
 [3/5] Initializing Hybrid RAG Retriever from: context_notes.csv
-Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]Loading weights: 100%|██████████| 103/103 [00:00<00:00, 3657.75it/s]
+
+Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]
+Loading weights: 100%|██████████| 103/103 [00:00<00:00, 3657.75it/s]
       Indexed 10 context notes.
 
 [4/5] Evaluating Spikes with Guardrail Reasoner (Temp=0)...
@@ -381,7 +409,7 @@ Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF
 
 ---> Executing Run #3 into output/run3.csv...
 ======================================================================
- FREIGHTTIGER SHIPPING WATCH: BATCH ANALYTICS & RAG PIPELINE
+ SHIPPING WATCH: BATCH ANALYTICS & RAG PIPELINE
 ======================================================================
 
 [1/5] Loading records from: shipment_records.csv
@@ -391,7 +419,9 @@ Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF
       Identified 20 anomalous cost spikes (708 within normal bounds).
 
 [3/5] Initializing Hybrid RAG Retriever from: context_notes.csv
-Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]Loading weights: 100%|██████████| 103/103 [00:00<00:00, 3698.21it/s]
+
+Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]
+Loading weights: 100%|██████████| 103/103 [00:00<00:00, 3698.21it/s]
       Indexed 10 context notes.
 
 [4/5] Evaluating Spikes with Guardrail Reasoner (Temp=0)...
@@ -430,7 +460,7 @@ Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF
 [2026-10-14 14:21:16 +0000] [263] [INFO] Booting worker with pid: 263
 [2026-10-14 14:21:16 +0000] [260] [INFO] Control socket listening at /root/.gunicorn/gunicorn.ctl
 ==========================================================
- FREIGHTTIGER SHIPPING WATCH ASSISTANT (CONTAINERIZED)
+ SHIPPING WATCH ASSISTANT (CONTAINERIZED)
 ==========================================================
 [2026-10-14 14:21:18] [INFO   ] [CONTAINER] [SYSTEM] Container booted. Starting pipeline...
 
@@ -449,10 +479,12 @@ Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF
 172.18.0.1 - - [14/Oct/2026:14:21:48 +0000] "GET /static/app.js HTTP/1.1" 304 0 "http://localhost:5000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36 Edg/155.0.0.0"
 172.18.0.1 - - [14/Oct/2026:14:21:49 +0000] "GET /api/data HTTP/1.1" 200 9551 "http://localhost:5000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36 Edg/155.0.0.0"
 Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
-Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]Loading weights: 100%|██████████| 103/103 [00:00<00:00, 3663.46it/s]
+
+Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]
+Loading weights: 100%|██████████| 103/103 [00:00<00:00, 3663.46it/s]
 172.18.0.1 - - [14/Oct/2026:14:21:52 +0000] "GET /api/notes HTTP/1.1" 200 2855 "http://localhost:5000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36 Edg/155.0.0.0"
 ==========================================================
- FREIGHTTIGER SHIPPING WATCH ASSISTANT (CONTAINERIZED)
+ SHIPPING WATCH ASSISTANT (CONTAINERIZED)
 ==========================================================
 [2026-10-14 14:23:20] [INFO   ] [CONTAINER] [SYSTEM] Container booted. Starting pipeline...
 
@@ -472,15 +504,25 @@ Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF
 172.18.0.1 - - [14/Oct/2026:14:24:41 +0000] "GET /static/app.js HTTP/1.1" 200 0 "http://localhost:5000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36 Edg/155.0.0.0"
 172.18.0.1 - - [14/Oct/2026:14:24:41 +0000] "GET /api/data HTTP/1.1" 200 9551 "http://localhost:5000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36 Edg/155.0.0.0"
 Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
-Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]
-Loading weights:   0%|          | 0/103 [00:00<?, ?it/s][ALoading weights: 100%|██████████| 103/103 [00:00<00:00, 1729.71it/s]
-Loading weights: 100%|██████████| 103/103 [00:00<00:00, 1398.87it/s]
+
+Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]
+
+Loading weights:   0%|          | 0/103 [00:00<?, ?it/s][A
+Loading weights: 100%|██████████| 103/103 [00:00<00:00, 1729.71it/s]
+
+Loading weights: 100%|██████████| 103/103 [00:00<00:00, 1398.87it/s]
 172.18.0.1 - - [14/Oct/2026:14:25:15 +0000] "GET /api/notes HTTP/1.1" 200 2855 "http://localhost:5000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36 Edg/155.0.0.0"
 172.18.0.1 - - [14/Oct/2026:14:25:16 +0000] "POST /api/chat HTTP/1.1" 200 336 "http://localhost:5000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36 Edg/155.0.0.0"
-Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]Loading weights: 100%|██████████| 103/103 [00:00<00:00, 4110.42it/s]
+
+Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]
+Loading weights: 100%|██████████| 103/103 [00:00<00:00, 4110.42it/s]
 172.18.0.1 - - [14/Oct/2026:14:25:40 +0000] "POST /api/chat HTTP/1.1" 200 883 "http://localhost:5000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36 Edg/155.0.0.0"
 [2026-10-14 20:06:31.548] [INFO   ] [HOST] [SYSTEM] Unified logger initialized successfully.
 [2026-10-14 20:06:31.558] [INFO   ] [HOST] [PIPELINE] Starting Batch Analytics & RAG Pipeline. Input: data/shipment_records.csv
 [2026-10-14 20:06:31.559] [INFO   ] [HOST] [PIPELINE] [1/5] Loading and aggregating shipments from data/shipment_records.csv
 [2026-10-14 20:06:31.597] [INFO   ] [HOST] [PIPELINE] Successfully saved 20 records to output/sample_output_format.csv and output\output.csv
 [2026-10-14 20:06:31.603] [INFO   ] [HOST] [TELEMETRY] Saved token & cost telemetry to output/token_cost_log.json
+
+Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]
+Loading weights: 100%|██████████| 103/103 [00:00<00:00, 3566.35it/s]
+172.18.0.1 - - [14/Oct/2026:14:37:31 +0000] "POST /api/chat HTTP/1.1" 200 183 "http://localhost:5000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36 Edg/155.0.0.0"

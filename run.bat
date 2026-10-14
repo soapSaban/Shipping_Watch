@@ -1,7 +1,7 @@
 @echo off
-title FreightTiger Shipping Watch - 1-Command Launcher
+title Shipping Watch - 1-Command Launcher
 echo ======================================================================
-echo  FREIGHTTIGER SHIPPING WATCH: 1-COMMAND LAUNCHER (WINDOWS)
+echo  SHIPPING WATCH: 1-COMMAND LAUNCHER (WINDOWS)
 echo ======================================================================
 
 REM Check if Python is installed

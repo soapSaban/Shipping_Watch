@@ -1,5 +1,5 @@
 """
-Live Terminal Monitor for FreightTiger Shipping Watch
+Live Terminal Monitor for Shipping Watch
 Continuously streams and colorizes logs from:
 1. logs/system_monitor.log & output/system_monitor.log
 2. Active Docker container runtime logs (stdout/stderr)
@@ -74,7 +74,7 @@ def tail_log_files():
             break
 
     print("=" * 80)
-    print(f"{BOLD}{CYAN} 🖥️  FREIGHTTIGER SHIPPING WATCH: UNIFIED PROCESS & SYSTEM MONITOR{RESET}")
+    print(f"{BOLD}{CYAN} 🖥️  SHIPPING WATCH: UNIFIED PROCESS & SYSTEM MONITOR{RESET}")
     print("=" * 80)
     print(f"Monitoring Log File : {target_file or 'Waiting for logs/system_monitor.log...'}")
     print(f"Docker Status       : {get_docker_status()}")

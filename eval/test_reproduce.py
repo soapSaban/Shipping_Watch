@@ -1,5 +1,5 @@
 """
-Reproducibility Verification Suite for FreightTiger Shipping Watch
+Reproducibility Verification Suite for Shipping Watch
 Executes 3 independent, untouched runs on the same input dataset.
 Validates exact grading criteria from PDF brief:
 "Three untouched runs on the same input: identical flags and numbers.

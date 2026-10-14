@@ -1,5 +1,5 @@
 """
-Hybrid RAG Retriever for FreightTiger Shipping Watch
+Hybrid RAG Retriever for Shipping Watch
 Combines:
 1. Deterministic metadata filters (Corridor applicability & Temporal proximity)
 2. Dense semantic embeddings via sentence-transformers (all-MiniLM-L6-v2) and FAISS

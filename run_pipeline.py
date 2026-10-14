@@ -1,5 +1,5 @@
 """
-Main CLI Pipeline for FreightTiger Shipping Watch
+Main CLI Pipeline for Shipping Watch
 Executes:
 1. Data loading & weekly aggregation (Monday-to-Sunday)
 2. Trailing 8-week history & peer route-type baseline calculations
@@ -36,7 +36,7 @@ def run_pipeline(
 ):
     logger.info(f"Starting Batch Analytics & RAG Pipeline. Input: {records_path}", module="PIPELINE")
     print("=" * 70)
-    print(" FREIGHTTIGER SHIPPING WATCH: BATCH ANALYTICS & RAG PIPELINE")
+    print(" SHIPPING WATCH: BATCH ANALYTICS & RAG PIPELINE")
     print("=" * 70)
 
     # 1. Initialize Tracker
@@ -178,7 +178,7 @@ def run_pipeline(
 
 
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser(description="FreightTiger Shipping Watch Pipeline")
+    parser = argparse.ArgumentParser(description="Shipping Watch Pipeline")
     parser.add_argument("--input", default="data/shipment_records.csv", help="Path to shipment records CSV")
     parser.add_argument("--notes", default="data/context_notes.csv", help="Path to context notes CSV")
     parser.add_argument("--output", default="output/sample_output_format.csv", help="Path for output CSV")
