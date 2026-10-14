@@ -21,6 +21,9 @@ docker compose up --build
 > **Alternative (Local Python without Docker):**  
 > Run `python start.py` (or double-click [`run.bat`](file:///c:/Users/TANMAY/OneDrive/Desktop/Shipping_Watch/run.bat) on Windows). It runs the pipeline, verifies ground truth, tests reproducibility, and opens your browser automatically.
 
+> **Full Dataset Coverage:**  
+> The pipeline ingests all **2,940 shipment records** across 2024–2025 and computes rolling baselines over **728 route-week periods** (7 corridors × 104 weeks). By default, `output/sample_output_format.csv` exports the **20 candidate anomaly spikes** requiring plain-English AI explanations (matching the sample output contract). To export all 728 route-week pairs (including unflagged baseline weeks where `flagged = "No"`), simply run: `python run_pipeline.py --all-rows`.
+
 ---
 
 ## 1. How It Works
