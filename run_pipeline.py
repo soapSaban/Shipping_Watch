@@ -144,8 +144,16 @@ def run_pipeline(
         writer.writeheader()
         writer.writerows(output_rows)
 
-    print(f"      Successfully saved {len(output_rows)} records to {output_path}")
-    logger.info(f"Successfully saved {len(output_rows)} records to {output_path}", module="PIPELINE")
+    # Mirror to output/output.csv so human reviewers and automated test scripts both find it
+    alt_output = os.path.join(os.path.dirname(output_path), "output.csv")
+    if os.path.abspath(alt_output) != os.path.abspath(output_path):
+        with open(alt_output, mode="w", newline="", encoding="utf-8") as f:
+            writer = csv.DictWriter(f, fieldnames=fieldnames)
+            writer.writeheader()
+            writer.writerows(output_rows)
+
+    print(f"      Successfully saved {len(output_rows)} records to {output_path} (and {alt_output})")
+    logger.info(f"Successfully saved {len(output_rows)} records to {output_path} and {alt_output}", module="PIPELINE")
 
     # 7. Save Telemetry Log
     tracker.save_log(cost_log_path)

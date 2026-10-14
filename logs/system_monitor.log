@@ -465,3 +465,22 @@ Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF
 [2026-10-14 14:23:20 +0000] [23] [INFO] Booting worker with pid: 23
 [2026-10-14 14:23:20 +0000] [24] [INFO] Booting worker with pid: 24
 [2026-10-14 14:23:20 +0000] [21] [INFO] Control socket listening at /root/.gunicorn/gunicorn.ctl
+172.18.0.1 - - [14/Oct/2026:14:24:30 +0000] "GET /static/style.css HTTP/1.1" 200 0 "-" "Python-urllib/3.10"
+172.18.0.1 - - [14/Oct/2026:14:24:30 +0000] "GET /static/app.js HTTP/1.1" 200 0 "-" "Python-urllib/3.10"
+172.18.0.1 - - [14/Oct/2026:14:24:41 +0000] "GET / HTTP/1.1" 200 8156 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36 Edg/155.0.0.0"
+172.18.0.1 - - [14/Oct/2026:14:24:41 +0000] "GET /static/style.css HTTP/1.1" 200 0 "http://localhost:5000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36 Edg/155.0.0.0"
+172.18.0.1 - - [14/Oct/2026:14:24:41 +0000] "GET /static/app.js HTTP/1.1" 200 0 "http://localhost:5000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36 Edg/155.0.0.0"
+172.18.0.1 - - [14/Oct/2026:14:24:41 +0000] "GET /api/data HTTP/1.1" 200 9551 "http://localhost:5000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36 Edg/155.0.0.0"
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]
+Loading weights:   0%|          | 0/103 [00:00<?, ?it/s][ALoading weights: 100%|██████████| 103/103 [00:00<00:00, 1729.71it/s]
+Loading weights: 100%|██████████| 103/103 [00:00<00:00, 1398.87it/s]
+172.18.0.1 - - [14/Oct/2026:14:25:15 +0000] "GET /api/notes HTTP/1.1" 200 2855 "http://localhost:5000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36 Edg/155.0.0.0"
+172.18.0.1 - - [14/Oct/2026:14:25:16 +0000] "POST /api/chat HTTP/1.1" 200 336 "http://localhost:5000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36 Edg/155.0.0.0"
+Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]Loading weights: 100%|██████████| 103/103 [00:00<00:00, 4110.42it/s]
+172.18.0.1 - - [14/Oct/2026:14:25:40 +0000] "POST /api/chat HTTP/1.1" 200 883 "http://localhost:5000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36 Edg/155.0.0.0"
+[2026-10-14 20:06:31.548] [INFO   ] [HOST] [SYSTEM] Unified logger initialized successfully.
+[2026-10-14 20:06:31.558] [INFO   ] [HOST] [PIPELINE] Starting Batch Analytics & RAG Pipeline. Input: data/shipment_records.csv
+[2026-10-14 20:06:31.559] [INFO   ] [HOST] [PIPELINE] [1/5] Loading and aggregating shipments from data/shipment_records.csv
+[2026-10-14 20:06:31.597] [INFO   ] [HOST] [PIPELINE] Successfully saved 20 records to output/sample_output_format.csv and output\output.csv
+[2026-10-14 20:06:31.603] [INFO   ] [HOST] [TELEMETRY] Saved token & cost telemetry to output/token_cost_log.json

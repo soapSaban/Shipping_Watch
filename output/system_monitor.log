@@ -18,3 +18,8 @@
 [2026-10-14 19:46:59.354] [INFO   ] [HOST] [PIPELINE] [1/5] Loading and aggregating shipments from shipment_records.csv
 [2026-10-14 19:46:59.399] [INFO   ] [HOST] [PIPELINE] Successfully saved 20 records to output\run3.csv
 [2026-10-14 19:46:59.401] [INFO   ] [HOST] [TELEMETRY] Saved token & cost telemetry to output\token_cost_run3.json
+[2026-10-14 20:06:31.548] [INFO   ] [HOST] [SYSTEM] Unified logger initialized successfully.
+[2026-10-14 20:06:31.558] [INFO   ] [HOST] [PIPELINE] Starting Batch Analytics & RAG Pipeline. Input: data/shipment_records.csv
+[2026-10-14 20:06:31.559] [INFO   ] [HOST] [PIPELINE] [1/5] Loading and aggregating shipments from data/shipment_records.csv
+[2026-10-14 20:06:31.597] [INFO   ] [HOST] [PIPELINE] Successfully saved 20 records to output/sample_output_format.csv and output\output.csv
+[2026-10-14 20:06:31.603] [INFO   ] [HOST] [TELEMETRY] Saved token & cost telemetry to output/token_cost_log.json
