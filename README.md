@@ -211,15 +211,4 @@ Shipping_Watch/
 
 ---
 
-## 10-Minute Walkthrough Talking Points (Round 2)
 
-1. **Problem Framing & Exact Baselines (2 min)**:
-   * Walk through the Monday–Sunday weekly grouping, trailing 8-week strictly prior history baseline, and leave-one-out peer average by `route_type`. Show 100% mathematical match on the sample rows.
-2. **Deterministic DAG vs. Agentic Overhead (2 min)**:
-   * Explain why multi-agent graph frameworks were avoided for batch processing (risk of non-determinism, token bloat) and why a deterministic functional pipeline guarantees identical MD5 runs.
-3. **Anti-Hallucination Guardrails (2 min)**:
-   * Explain the 3 verification gates: corridor isolation, temporal proximity window ($\pm 35$ days), and directionality/sentiment checks that reject non-affecting decoy notes (N005, N010).
-4. **Zero-Cost Strategy & Model Cascade (2 min)**:
-   * Present the token log: only 20 calls across 2 full years of data, costing $0.00 on the free tier with `gemini-3.5-flash-lite`.
-5. **Live Demo & Interactive Q&A (2 min)**:
-   * Open **`https://shipping-watch.onrender.com`** (or `http://localhost:5000`), demonstrate the table filtering, and ask an ad-hoc question in the QA assistant box (e.g. *"Why did Ahmedabad-Mumbai spike in Jan 2025?"*) to showcase the live framing spinner and grounded response.
